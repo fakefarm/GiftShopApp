@@ -1,5 +1,6 @@
 class Review < ActiveRecord::Base
-  attr_accessible :description, :name, :product_id, :user_id
+  attr_accessible :body, :product_id, :rating, :title, :user_id
+
   belongs_to :product, :user
 
   validates :rating, :numericality => { :only_integer => true

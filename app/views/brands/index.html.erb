@@ -1,2 +1,23 @@
-<h1>Brands#index</h1>
-<p>Find me in app/views/brands/index.html.erb</p>
+<h1>Brands</h1>
+
+
+<p><%= flash[:notice] %></p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td>Logo</td>
+      <td>Name</td>
+      <td>Average Ranking</td>
+      </tr>
+  </thead>
+    <% @brands.each do |item| %>
+    <tr>
+    <td><%= image_tag item.logo %></td>
+    <td><%= item.name %></td>
+    <td></td>
+    <td><%= link_to "edit", edit_brand_url(item.id) %></td>
+    </tr>
+    <% end %>
+
+</table>  
